@@ -30,6 +30,21 @@ as Excel files. Each shipment has a client and a shipment number
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
 - Add an **antidumping note** for any items subject to antidumping duties.
 
+## Document checks — COO / preferential origin (VERY IMPORTANT)
+
+- **Always check the shipment documents (invoices, etc.) for a `preferenční věta`** — a
+  preferential-origin declaration. This is about **COO (country of origin)** and it directly
+  affects the duty owed at clearance.
+- The statement looks like this (example, Korea):
+  > "The exporter of the products covered by this document (customs authorization
+  > No. 020-12-200186) declares that, except where otherwise clearly indicated, these
+  > products are of Republic of Korea preferential origin."
+- **Why it matters:** without it, the standard third-country duty applies (e.g. **Jinzi Korea
+  → 2.7 % clo**). With a valid preferential statement, the goods qualify for **preferential
+  tariff treatment** (reduced / zero duty) instead.
+- **If a `preferenční věta` is present in the docs, flag it to me explicitly** as a prominent
+  note — it is critical for correct clearance of the shipment. Don't bury it; call it out.
+
 ## Defaults & assumptions
 
 <!-- Fill these in so I stop asking each time. Delete any that don't apply. -->
