@@ -25,6 +25,8 @@ as Excel files. Each shipment has a client and a shipment number
   consolidate (e.g. 9019 raw rows → the set of distinct HS codes they map to).
 - **Do NOT include an Incoterm column** in the summary.
 - Include **gross weights** per HS code.
+- Include the **total quantity** for each HS code (sum the quantities of the line items
+  merged into that HS code).
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
