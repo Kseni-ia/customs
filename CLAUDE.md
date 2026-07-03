@@ -54,7 +54,6 @@ as Excel files. Each shipment has a client and a shipment number
 
 ## How I like to work
 
-- **Address me by name — Kseniia — each time you reply to me.**
 - When a new shipment starts, ask me only for what you can't infer (client, shipment
   number, source data file) — don't re-ask about the rules above.
 - Show me the resulting file / a summary of what changed after each update.
