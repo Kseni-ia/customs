@@ -24,11 +24,14 @@ as Excel files. Each shipment has a client and a shipment number
 - **Merge line items to unique HS codes.** Don't list the same HS code on multiple rows —
   consolidate (e.g. 9019 raw rows → the set of distinct HS codes they map to).
 - **Do NOT include an Incoterm column** in the summary.
-- Include **gross weights** per HS code.
+- Include **gross weights** AND **net weights** per HS code.
 - Include the **total quantity** for each HS code (sum the quantities of the line items
   merged into that HS code).
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
+- **Use the Czech goods descriptions from the invoice** (the Czech column, e.g. "Rychlovarná
+  konvice", "Odpadkový koš") as the primary description column — that's what goes on the CZ
+  customs declaration. Keep the English name only as a secondary column.
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
 - Add an **antidumping note** for any items subject to antidumping duties.
 
