@@ -21,12 +21,32 @@ as Excel files. Each shipment has a client and a shipment number
 
 ## HS code summary — default rules
 
+### ⚠️ Required columns — NEVER omit these (one row per unique HS code)
+
+Every HS code summary **MUST** include the following columns for **each** HS code. Do not
+drop any of them, even if the source data makes them tedious to compute:
+
+1. **HS code**
+2. **Description** — see the description-language rule below (Czech prioritised).
+3. **Net weight** per HS code (sum the net weights of the merged line items).
+4. **Gross weight** per HS code (sum the gross weights of the merged line items).
+5. **Quantity** — the total quantity for the HS code (sum the quantities of the merged line items).
+6. **Price / customs value** for the HS code.
+
+If any of these values is genuinely missing from the source data, keep the column and tell
+me it's missing — don't silently drop the whole column.
+
+### Description language — Czech is prioritised
+
+- **If a Czech description of the item is available in the source docs, use it.** The Czech
+  description takes priority over any other language for the Description column.
+- Only fall back to another language when no Czech description exists.
+
+### Other rules
+
 - **Merge line items to unique HS codes.** Don't list the same HS code on multiple rows —
   consolidate (e.g. 9019 raw rows → the set of distinct HS codes they map to).
 - **Do NOT include an Incoterm column** in the summary.
-- Include **gross weights** per HS code.
-- Include the **total quantity** for each HS code (sum the quantities of the line items
-  merged into that HS code).
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
