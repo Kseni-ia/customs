@@ -57,8 +57,12 @@ for c, h in enumerate(headers, start=1):
     cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     cell.border = border
 
-r = hdr_row + 1
-for rec in rows:
+group_fill = PatternFill("solid", fgColor="2E75B6")
+group_font = Font(bold=True, color="FFFFFF", size=11)
+sub_fill = PatternFill("solid", fgColor="D6E4F0")
+
+
+def write_item(r, rec):
     (typ, mat, desc, hs, qty, net, gross, unit, total, inv, dn, inco, cur) = rec
     vals = [typ, mat, desc, hs, qty, net, gross, unit, total, inv, dn, inco, cur]
     fill = thyr_fill if typ == "Thyristor" else diode_fill
@@ -66,25 +70,61 @@ for rec in rows:
         cell = ws.cell(row=r, column=c, value=v)
         cell.border = border
         cell.fill = fill
-        if c in (5,):  # qty
+        if c == 5:
             cell.number_format = "#,##0"
-        if c in (6, 7):  # weights
+        if c in (6, 7, 8, 9):
             cell.number_format = "#,##0.00"
-        if c in (8, 9):  # money
-            cell.number_format = "#,##0.00"
-        if c in (10, 11):  # keep as text so leading zeros survive
+        if c in (10, 11):
             cell.number_format = "@"
         if c in (4, 5, 6, 7, 8, 9, 12, 13):
             cell.alignment = Alignment(horizontal="center")
     if gross is None:
-        gc = ws.cell(row=r, column=7)
-        gc.value = "n/a"
-        gc.comment = None
-    r += 1
+        ws.cell(row=r, column=7, value="n/a").alignment = Alignment(horizontal="center")
 
-# Totals row
+
+def write_group(r, label, recs):
+    # group banner
+    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=13)
+    gc = ws.cell(row=r, column=1, value=label)
+    gc.fill = group_fill
+    gc.font = group_font
+    gc.alignment = Alignment(horizontal="left", vertical="center", indent=1)
+    for c in range(1, 14):
+        ws.cell(row=r, column=c).border = border
+    r += 1
+    for rec in recs:
+        write_item(r, rec)
+        r += 1
+    # subtotal
+    q = sum(x[4] for x in recs)
+    nt = sum(x[5] for x in recs)
+    gt = sum((x[6] or 0) for x in recs)
+    vt = sum(x[8] for x in recs)
+    ws.cell(row=r, column=3, value=f"Subtotal — {label} ({len(recs)} items)")
+    ws.cell(row=r, column=5, value=q).number_format = "#,##0"
+    ws.cell(row=r, column=6, value=round(nt, 2)).number_format = "#,##0.00"
+    ws.cell(row=r, column=7, value=round(gt, 2)).number_format = "#,##0.00"
+    ws.cell(row=r, column=9, value=round(vt, 2)).number_format = "#,##0.00"
+    for c in range(1, 14):
+        cell = ws.cell(row=r, column=c)
+        cell.fill = sub_fill
+        cell.font = total_font
+        cell.border = border
+        if c in (4, 5, 6, 7, 8, 9, 12, 13):
+            cell.alignment = Alignment(horizontal="center")
+    return r + 1
+
+
+diodes = [x for x in rows if x[0] == "Diode"]
+thyristors = [x for x in rows if x[0] == "Thyristor"]
+
+r = hdr_row + 1
+r = write_group(r, "DIODES  —  HS 8541 10 00", diodes)
+r = write_group(r, "THYRISTORS  —  HS 8541 30 00", thyristors)
+
+# Grand total row
 tot_row = r
-ws.cell(row=tot_row, column=1, value="TOTAL")
+ws.cell(row=tot_row, column=1, value="GRAND TOTAL")
 ws.cell(row=tot_row, column=3, value="8 items (5 diode types, 3 thyristor types)")
 qty_total = sum(x[4] for x in rows)
 net_total = sum(x[5] for x in rows)
@@ -101,7 +141,7 @@ for c in range(1, 14):
     cell.fill = total_fill
     cell.font = total_font
     cell.border = border
-    if c in (4,5,6,7,8,9,12,13):
+    if c in (4, 5, 6, 7, 8, 9, 12, 13):
         cell.alignment = Alignment(horizontal="center")
 
 # Notes
