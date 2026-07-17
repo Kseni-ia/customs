@@ -42,10 +42,20 @@ me it's missing — don't silently drop the whole column.
   description takes priority over any other language for the Description column.
 - Only fall back to another language when no Czech description exists.
 
+### Classification — sender first, then HS code
+
+- **Classify the shipment by sender first, then by HS code.** The **sender takes priority**
+  over the HS code.
+- **Merge line items to unique HS codes _within each sender_.** Don't list the same HS code
+  on multiple rows for the same sender — consolidate (e.g. 9019 raw rows → the set of
+  distinct HS codes they map to).
+- **If the same HS code appears under different senders, keep it on separate rows — one per
+  sender.** Do NOT merge identical HS codes across senders; the shipment must be classified
+  per sender in that case.
+
 ### Other rules
 
-- **Merge line items to unique HS codes.** Don't list the same HS code on multiple rows —
-  consolidate (e.g. 9019 raw rows → the set of distinct HS codes they map to).
+- **Do NOT include an Incoterm column** in the summary.
 - **Do NOT include an Incoterm column** in the summary.
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
