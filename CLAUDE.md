@@ -56,7 +56,6 @@ me it's missing — don't silently drop the whole column.
 ### Other rules
 
 - **Do NOT include an Incoterm column** in the summary.
-- **Do NOT include an Incoterm column** in the summary.
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
