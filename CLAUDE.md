@@ -55,7 +55,9 @@ me it's missing — don't silently drop the whole column.
 
 ### Other rules
 
-- **Do NOT include an Incoterm column** in the summary.
+- **Always include the Incoterm** in the summary — both the **Incoterm term** (e.g. FCA,
+  EXW, DAP, CIP) **and the city / named place** that goes with it (e.g. `FCA Prague`,
+  `EXW Seoul`). Never leave out the city.
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
 - Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
