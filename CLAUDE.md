@@ -95,3 +95,28 @@ me it's missing — don't silently drop the whole column.
 ## Notes / things to remember
 
 <!-- Add per-client quirks, recurring HS codes, past decisions, etc. here over time. -->
+
+### MOREK CZ s.r.o. — Guangdong Grandview Technology (heat-shrink tubing)
+
+- **Sender quirk:** Grandview leaves the **HS CODE column on their invoices completely
+  empty** — every line, both invoices. Expect to classify from scratch each time, and
+  it's worth asking them to start filling it in.
+- **Classification used (shipment F202615259, Aug 2026): `8547 20 00`** for all
+  heat-shrink tubing and MSTS kits — thinwall/mediumwall/heavywall, with and without
+  adhesive liner.
+  - Reason: **Note 8 to Chapter 39 legally rules out 3917** — it limits that heading to
+    tubes used for *conveying, conducting or distributing gases or liquids*, which
+    insulating sleeving is not. Note 2 to Ch. 39 also excludes Section XVI goods.
+  - MSTS kits follow GIR 3(b) — all components are heat-shrink tubes, so same code.
+  - Alternative if goods are ever treated as plain material in running lengths:
+    `3926 90 97`. **A BTI is worth getting** given the recurring volume.
+- **Their B/L declares `8547 90 00`** — wrong subheading (that one is for metal conduit
+  lined with insulating material). Right heading, wrong subheading.
+- **China = no preferential origin is possible.** The EU has no FTA with China, so a
+  `preferenční věta` can never help here — full third-country duty always applies.
+  Still check for it, but don't expect one.
+- **Packing lists give gross weight per pallet only**, never per item — apportion pro
+  rata to net weight within each container so the total ties to the B/L.
+- **Their invoice PDFs have overlapping text runs** in the left "Description of Goods"
+  column, so it extracts as scrambled characters. The **"Printing" column is clean** —
+  use that (product code + size + length) plus the Customer PN instead.
