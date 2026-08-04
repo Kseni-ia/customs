@@ -101,17 +101,24 @@ me it's missing — don't silently drop the whole column.
 - **Sender quirk:** Grandview leaves the **HS CODE column on their invoices completely
   empty** — every line, both invoices. Expect to classify from scratch each time, and
   it's worth asking them to start filling it in.
-- **Classification used (shipment F202615259, Aug 2026): `8547 20 00`** for all
-  heat-shrink tubing and MSTS kits — thinwall/mediumwall/heavywall, with and without
-  adhesive liner.
-  - Reason: **Note 8 to Chapter 39 legally rules out 3917** — it limits that heading to
-    tubes used for *conveying, conducting or distributing gases or liquids*, which
-    insulating sleeving is not. Note 2 to Ch. 39 also excludes Section XVI goods.
-  - MSTS kits follow GIR 3(b) — all components are heat-shrink tubes, so same code.
-  - Alternative if goods are ever treated as plain material in running lengths:
-    `3926 90 97`. **A BTI is worth getting** given the recurring volume.
-- **Their B/L declares `8547 90 00`** — wrong subheading (that one is for metal conduit
-  lined with insulating material). Right heading, wrong subheading.
+- **HS codes come from the forwarder, not the documents.** Maurice Ward (Lukáš
+  Jirkovský, `customs.praha@mauriceward.com`) sends them by e-mail with the ETA and
+  JSD routing — ask him for them if they haven't arrived. His e-mail is also the only
+  **Czech-language** description of the goods, so use his wording verbatim.
+- **Codes used for shipment CZ26008741 (Aug 2026)**, per his e-mail:
+  - `8547 20 00` — smršťovací trubice silnostěnná a středněstěnná (heavy + medium wall)
+  - `3917 40 00` — spojovací set (MSTS kits)
+  - `8547 90 00` — smršťovací bužírka tenkostěnná (thinwall sleeving)
+- **Two standing reservations about those codes** — raised, not yet resolved:
+  - Thinwall is *wholly plastic*, so `8547 90 00` (residual, aimed at metal conduit
+    lined with insulating material) sits oddly beside heavy/medium wall in `8547 20 00`.
+  - **Note 8 to Chapter 39** limits heading 3917 to tubes *conveying gases or liquids*,
+    and `3917 40` covers fittings for such pipes — so it's doubtful for cable-jointing
+    sets made purely of heat-shrink sleeve. GIR 3(b) would point at `8547 20 00`.
+    The kits are ~36 % of shipment value, so **the duty difference is material** —
+    check both rates in TARIC. **A BTI is worth getting** given the recurring volume.
+- **Their B/L declares a single blanket `8547 90 00`** for the whole container, which
+  matches none of the three-code split — don't rely on it.
 - **China = no preferential origin is possible.** The EU has no FTA with China, so a
   `preferenční věta` can never help here — full third-country duty always applies.
   Still check for it, but don't expect one.
@@ -120,3 +127,9 @@ me it's missing — don't silently drop the whole column.
 - **Their invoice PDFs have overlapping text runs** in the left "Description of Goods"
   column, so it extracts as scrambled characters. The **"Printing" column is clean** —
   use that (product code + size + length) plus the Customer PN instead.
+- **EXW + freight collect** — the invoice total is *not* the customs value. Freight and
+  insurance to the EU border must be added; Maurice Ward sends the amount with the MRN,
+  then apportion it across the HS codes by value.
+- **Origin is stated on the invoice face only** (`Country of Origin: CHINA`) — there is
+  no separate certificate of origin in the pack, and none is needed for a
+  non-preferential declaration absent a trade-defence measure.
