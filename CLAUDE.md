@@ -98,9 +98,10 @@ me it's missing — don't silently drop the whole column.
 
 ### MOREK CZ s.r.o. — Guangdong Grandview Technology (heat-shrink tubing)
 
-- **Sender quirk:** Grandview leaves the **HS CODE column on their invoices completely
-  empty** — every line, both invoices. Expect to classify from scratch each time, and
-  it's worth asking them to start filling it in.
+- **Sender quirk:** Grandview's invoices arrive with the **HS CODE column empty** on
+  every line. **Ask them to reissue with codes filled in** — they did exactly that for
+  CZ26008741 on request, and the reissued invoices are the fastest way to check a
+  classification line by line. Amounts and quantities were unchanged on the reissue.
 - **HS codes come from the forwarder, not the documents.** Maurice Ward (Lukáš
   Jirkovský, `customs.praha@mauriceward.com`) sends them by e-mail with the ETA and
   JSD routing — ask him for them if they haven't arrived. His e-mail is also the only
@@ -109,6 +110,10 @@ me it's missing — don't silently drop the whole column.
   - `8547 20 00` — smršťovací trubice silnostěnná a středněstěnná (heavy + medium wall)
   - `3917 40 00` — spojovací set (MSTS kits)
   - `8547 90 00` — smršťovací bužírka tenkostěnná (thinwall sleeving)
+- **Verified line by line** against Grandview's reissued invoices: 97 of 98 lines carry
+  a code and all 97 match the split above (32 × `8547 20 00`, 12 × `3917 40 00`,
+  53 × `8547 90 00`). Note this is consistency, not independent confirmation — supplier
+  and forwarder almost certainly share one source.
 - **Two standing reservations about those codes** — raised, not yet resolved:
   - Thinwall is *wholly plastic*, so `8547 90 00` (residual, aimed at metal conduit
     lined with insulating material) sits oddly beside heavy/medium wall in `8547 20 00`.
