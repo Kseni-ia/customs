@@ -76,7 +76,10 @@ HS_META = {
     "3926909790": ("Ne", "Ne", "Ostatní výrobky z plastů. Gasket + Gauge na jednom řádku, DK 90 – potvrzeno "
                                 "předchozím celním prohlášením Sonavox."),
     "3921909090": ("Ne", "Ne", "Ostatní desky, listy, fólie a pásy z plastů."),
-    "7318159519": ("ANO", "ANO", "Spojovací materiál ze železa/oceli, původ ČÍNA – viz list Poznámky."),
+    "7318159519": ("ANO", "K OVĚŘENÍ", "Spojovací materiál ze železa/oceli, původ ČÍNA. CBAM platí vždy (i pro "
+                                          "hliníkovou variantu 7616). Antidumping závisí na tom, zda jde o matici "
+                                          "(7318 16 – mimo působnost) nebo šroub/vložku (ex 7318 15 95 – AD 22,1–86,5 %). "
+                                          "Viz list Poznámky."),
     "7413000090": ("Ne", "Ne", "Splétaná lanka z mědi, neizolovaná."),
 }
 
@@ -300,21 +303,28 @@ notes = [
      "jde ŽELEZNICÍ (Zhengzhou/Putian → Malaszewicze → CZ). Pro železniční přepravu je správný termín FCA "
      "s uvedeným místem. Nutno vyžádat od odesílatele opravu / doplnění, jinak nelze spolehlivě určit, zda "
      "je do celní hodnoty nutno připočíst dopravné do hranice EU."),
-    ("KRITICKÉ", "Antidumping – spojovací materiál ze železa/oceli (HS 7318), původ Čína",
-     "Položky 14 (Nut, 029-2513-AL-CZ) a 15 (Spring nut, 029A-000004-CZ) od odesílatele "
-     "Suzhou Sonavox International Trading, zařazené pod 7318 15 95, spadají do rozsahu platných antidumpingových "
-     "opatření EU na spojovací prostředky ze železa nebo oceli pocházející z ČLR (nař. (EU) 2022/191 ve znění "
-     "pozdějších předpisů, včetně opatření proti obcházení). Celní hodnota těchto položek: 13 140,00 EUR. "
-     "Nutno ověřit doplňkový kód TARIC podle konkrétního čínského výrobce – sazba se dle výrobce významně liší."),
-    ("KRITICKÉ", "CBAM – spojovací materiál ze železa/oceli (HS 7318)",
-     "Tytéž položky pod kódem 7318 15 95 spadají do přílohy I nařízení CBAM (železo a ocel). Celkem 210 000 ks, "
-     "čistá hmotnost 312,30 kg. Nutno zahrnout do čtvrtletního CBAM hlášení (vykazuje se čistá hmotnost "
-     "a zabudované emise). Ostatní položky zásilky (kap. 35, 39, 74, 85) do CBAM nespadají."),
+    ("KRITICKÉ", "Antidumping – závisí na materiálu A na tom, čím díl skutečně je",
+     "Položky 14 (Nut, 029-2513-AL-CZ) a 15 (Spring nut, 029A-000004-CZ), celkem 13 140,00 EUR, mají tři možné "
+     "scénáře: (a) HLINÍK → 7616 10 00, clo cca 6 %, BEZ antidumpingu; (b) OCELOVÁ MATICE → 7318 16, clo cca 3,7 %, "
+     "BEZ antidumpingu; (c) OCELOVÝ ŠROUB / ZÁVITOVÁ VLOŽKA → ex 7318 15 95, clo 3,7 % + ANTIDUMPING 22,1–86,5 %. "
+     "Nař. (EU) 2022/191 se vztahuje na vruty, samořezné šrouby, ostatní šrouby a svorníky s hlavou a podložky "
+     "(kódy 7318 12 90, 7318 14 91, 7318 14 99, 7318 15 58, 7318 15 68, 7318 15 82, 7318 15 88, ex 7318 15 95, "
+     "ex 7318 21 00, ex 7318 22 00) – kód 7318 16 pro MATICE v seznamu NENÍ, samostatné matice tedy do působnosti "
+     "nespadají. Tabulka SONAVOX přiřazuje „Insert (nut)“ kód 7318 15 95 19, tj. kód pro šrouby, což u dílu "
+     "nazvaného „nut“ může být chybné. V souhrnu je konzervativně ponecháno 7318 15 95 19. NUTNO ZJISTIT MATERIÁL "
+     "I SKUTEČNÝ DRUH DÍLU; při variantě (c) je nutný doplňkový kód TARIC dle výrobce – bez jména výrobce se "
+     "uplatní zbytková sazba 86,5 %."),
+    ("KRITICKÉ", "CBAM – platí u matic v každé variantě",
+     "Položky 14 a 15 (210 000 ks, čistá hmotnost 312,30 kg) spadají do přílohy I nařízení CBAM bez ohledu na to, "
+     "jak dopadne otázka materiálu: kapitola 73 (železo a ocel) i kapitola 76 (hliník) jsou v příloze I. "
+     "Nutno zahrnout do čtvrtletního CBAM hlášení (vykazuje se čistá hmotnost a zabudované emise). "
+     "Ostatní položky zásilky (kap. 35, 39, 85) do CBAM nespadají."),
     ("K OVĚŘENÍ", "Nesoulad: „Nut 029-2513-AL-CZ“ – ocel nebo hliník?",
      "Označení dílu obsahuje „-AL-“, což naznačuje HLINÍK, avšak podklad SONAVOX (e-mail „SONAVOX HS KODY“) "
      "přiřazuje „Insert (nut)“ kód 7318 15 95 19 (železo/ocel). Hliníková matice by patřila pod 7616 10 00. "
      "Zařazení má přímý dopad: 7318 = antidumping ANO + CBAM ANO; 7616 = antidumping NE + CBAM ANO. "
-     "V souhrnu je konzervativně použito 7318 15 95 19. NUTNO POTVRDIT MATERIÁL U DODAVATELE."),
+     "V souhrnu je konzervativně použito 7318 15 95 19. NUTNO POTVRDIT MATERIÁL I DRUH DÍLU U DODAVATELE "
+     "(matice vs. závitová vložka/šroub) – viz poznámka k antidumpingu."),
     ("VYŘEŠENO", "Přípona u 8518 90 00 = DK 00 (opraveno dle předchozích celních prohlášení)",
      "Referenční tabulka SONAVOX uvádí u částí reproduktorů souběžně přípony 00, 40, 90 i 99. Ve dvou "
      "předchozích celních prohlášeních Sonavox je však pro VŠECHNY části reproduktorů použito jednotně "
