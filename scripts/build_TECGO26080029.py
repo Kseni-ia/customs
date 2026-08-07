@@ -148,6 +148,7 @@ ws = wb.create_sheet("HS Summary", 0)
 ws["A1"] = "HS CODE SUMMARY – Sonavox Technology CZ s.r.o."
 ws["A1"].font = TITLE
 meta = [
+    ("Reference MW:", "CZ26011282 (Josef Šrejber – RAIL) | celní režim: volný oběh | celnice: A1 Ostrava | příjezd cca 34. týden"),
     ("Odesílatelé / Senders:", "3 (viz členění níže) – zásilka je členěna PRIMÁRNĚ dle odesílatele"),
     ("Příjemce / Consignee:", "Sonavox Technology CZ s.r.o., Lhotka nad Bečvou 93, 756 41 Lešná, Czech Republic"),
     ("FCR / HBL No.:", "TECGO26080029 (T.H.I. Group Ltd.), ref. ZIHWB260805FM022"),
