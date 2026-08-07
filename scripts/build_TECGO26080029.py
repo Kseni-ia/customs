@@ -15,11 +15,11 @@ LINES = [
     # --- Sender 1: Suzhou Sonavox International Trading Co., Ltd (CZ20260725) ---
     (S1, 1, "010-KD1622S-3.8A-CZ", "Voice coil", 65000, 86.5, 216.33, 9841.00, "8504500000",
      "Kmitací cívka – měděný drát (jednoduché vinutí) navinutý na papírovém válci (formeru)"),
-    (S1, 2, "040-62E4-CR-CZ", "Front plate", 35000, 2345.0, 2385.00, 3542.00, "8518900090",
+    (S1, 2, "040-62E4-CR-CZ", "Front plate", 35000, 2345.0, 2385.00, 3542.00, "8518900000",
      "Ocelová deska (front plate) – součást autoreproduktoru"),
-    (S1, 3, "040-80I6-CRB-CZ", "Front plate", 32400, 5103.0, 5183.00, 7464.96, "8518900090",
+    (S1, 3, "040-80I6-CRB-CZ", "Front plate", 32400, 5103.0, 5183.00, 7464.96, "8518900000",
      "Ocelová deska (front plate) – součást autoreproduktoru"),
-    (S1, 4, "040-54D3-CR-1-CZ", "Front plate", 25000, 1012.5, 1032.91, 1377.50, "8518900090",
+    (S1, 4, "040-54D3-CR-1-CZ", "Front plate", 25000, 1012.5, 1032.91, 1377.50, "8518900000",
      "Ocelová deska (front plate) – součást autoreproduktoru"),
     (S1, 5, "021-100F00-9-CZ", "Spider", 5600, 10.5, 15.00, 449.68, "8518900000",
      "Středící membrána (spider) – naimpregnovaná textilie, součást autoreproduktoru"),
@@ -37,14 +37,14 @@ LINES = [
      "Plastový kalibr (gauge) – montážní přípravek, ostatní výrobky z plastů"),
     (S1, 9, "J2-10X002-0001-CZ", "Waterproof membrane", 210000, 30.24, 40.00, 8820.00, "3921909090",
      "Plastová membrána (vodotěsná membrána) – ochranná membrána reproduktoru"),
-    (S1, 10, "181-35113-1SN-CZ", "Terminal", 75000, 37.5, 40.00, 1612.50, "7409390000",
-     "Kontakt / vývod (terminal) – z mědi"),
-    (S1, 11, "181-35113-2SN-CZ", "Terminal", 125000, 62.5, 70.00, 2687.50, "7409390000",
-     "Kontakt / vývod (terminal) – z mědi"),
-    (S1, 12, "181-40133-1SN-CZ", "Terminal", 200000, 100.0, 110.00, 2540.00, "7409390000",
-     "Kontakt / vývod (terminal) – z mědi"),
-    (S1, 13, "181-40133-2SN-CZ", "Terminal", 200000, 100.0, 110.00, 2540.00, "7409390000",
-     "Kontakt / vývod (terminal) – z mědi"),
+    (S1, 10, "181-35113-1SN-CZ", "Terminal", 75000, 37.5, 40.00, 1612.50, "8518900000",
+     "Kontakt / vývod (terminal) – část autoreproduktoru"),
+    (S1, 11, "181-35113-2SN-CZ", "Terminal", 125000, 62.5, 70.00, 2687.50, "8518900000",
+     "Kontakt / vývod (terminal) – část autoreproduktoru"),
+    (S1, 12, "181-40133-1SN-CZ", "Terminal", 200000, 100.0, 110.00, 2540.00, "8518900000",
+     "Kontakt / vývod (terminal) – část autoreproduktoru"),
+    (S1, 13, "181-40133-2SN-CZ", "Terminal", 200000, 100.0, 110.00, 2540.00, "8518900000",
+     "Kontakt / vývod (terminal) – část autoreproduktoru"),
     (S1, 14, "029-2513-AL-CZ", "Nut", 180000, 299.7, 310.50, 12600.00, "7318159519",
      "Matice / vložka (nut, insert) – závitové zboží ze železa nebo oceli"),
     (S1, 15, "029A-000004-CZ", "Spring nut", 30000, 12.6, 15.00, 540.00, "7318159519",
@@ -70,12 +70,12 @@ LINES = [
 # HS code -> (CBAM, antidumping, classification note)
 HS_META = {
     "8504500000": ("Ne", "Ne", "Zařazení dle ZISZ 30-0292-2016 (kmitací cívka = ostatní tlumivky)."),
-    "8518900090": ("Ne", "Ne", "Přípona 90 dle podkladu SONAVOX; ocelový díl, ale zařazen v kap. 85 – mimo CBAM."),
-    "8518900000": ("Ne", "Ne", "Části a součásti reproduktorů."),
+    "8518900000": ("Ne", "Ne", "Části a součásti reproduktorů. Přípona DK 00 a zařazení terminalu i front plate "
+                                "pod tento kód dle předchozího celního prohlášení Sonavox (viz list Zdroje)."),
     "8518210000": ("Ne", "Ne", "Kompletní autoreproduktor, jediný v jedné skříni."),
-    "3926909790": ("Ne", "Ne", "Ostatní výrobky z plastů."),
+    "3926909790": ("Ne", "Ne", "Ostatní výrobky z plastů. Gasket + Gauge na jednom řádku, DK 90 – potvrzeno "
+                                "předchozím celním prohlášením Sonavox."),
     "3921909090": ("Ne", "Ne", "Ostatní desky, listy, fólie a pásy z plastů."),
-    "7409390000": ("Ne", "Ne", "Desky/pásy ze slitin mědi – kap. 74 není v příloze I CBAM."),
     "7318159519": ("ANO", "ANO", "Spojovací materiál ze železa/oceli, původ ČÍNA – viz list Poznámky."),
     "7413000090": ("Ne", "Ne", "Splétaná lanka z mědi, neizolovaná."),
 }
@@ -314,19 +314,22 @@ notes = [
      "přiřazuje „Insert (nut)“ kód 7318 15 95 19 (železo/ocel). Hliníková matice by patřila pod 7616 10 00. "
      "Zařazení má přímý dopad: 7318 = antidumping ANO + CBAM ANO; 7616 = antidumping NE + CBAM ANO. "
      "V souhrnu je konzervativně použito 7318 15 95 19. NUTNO POTVRDIT MATERIÁL U DODAVATELE."),
-    ("K OVĚŘENÍ", "Nekonzistentní 10místné přípony u 8518 90 00 v podkladu SONAVOX",
-     "Referenční tabulka HS kódů od Sonavoxu používá pro části reproduktorů souběžně 8518 9000 00, 8518 9000 40, "
-     "8518 9000 90 i 8518 9000 99. Na úrovni KN8 jde vždy o 8518 90 00. V souhrnu je zachováno rozlišení "
-     "dle podkladu (Front plate = ...90, ostatní části = ...00), ale platnou národní/TARIC příponu je nutno "
-     "ověřit v TARIC CZ – při proclení musí být použit jeden platný 10místný kód."),
+    ("VYŘEŠENO", "Přípona u 8518 90 00 = DK 00 (opraveno dle předchozích celních prohlášení)",
+     "Referenční tabulka SONAVOX uvádí u částí reproduktorů souběžně přípony 00, 40, 90 i 99. Ve dvou "
+     "předchozích celních prohlášeních Sonavox je však pro VŠECHNY části reproduktorů použito jednotně "
+     "8518 90 00 s doplňkovým kódem DK 00 – včetně Front plate („Front plate – deska“), T-yoke, Cone, Spider, "
+     "Dust cap a Bracket. Front plate byl proto v tomto souhrnu OPRAVEN z 8518 9000 90 na 8518 9000 00. "
+     "Přípony 40 / 90 / 99 z tabulky SONAVOX se v praxi nepoužívají."),
     ("K OVĚŘENÍ", "Waterproof membrane – kód přiřazen odvozením",
      "Položka 9 (J2-10X002-0001-CZ, Waterproof membrane, 210 000 ks, 8 820,00 EUR) není v referenční tabulce "
      "SONAVOX uvedena pod tímto názvem. Byl použit kód 3921 90 90 90 podle nejbližší položky "
      "„Protective membrane plast / Plastová membrána“. Doporučeno potvrdit u dodavatele."),
-    ("K OVĚŘENÍ", "Terminal – kód přiřazen odvozením",
-     "Položky 10–13 (Terminal, celkem 600 000 ks, 9 380,00 EUR) byly zařazeny pod 7409 39 00 podle položky "
-     "„Pin, lug / kontakt“ z tabulky SONAVOX. Pokud jsou terminály pocínované/potažené nebo tvarované lisováním, "
-     "může přicházet v úvahu jiné zařazení (např. 8536 90). Doporučeno potvrdit."),
+    ("VYŘEŠENO", "Terminal – OPRAVENO z 7409 39 00 na 8518 90 00 00",
+     "Položky 10–13 (Terminal, celkem 600 000 ks, 9 380,00 EUR) byly původně zařazeny pod 7409 39 00 podle "
+     "položky „Pin, lug / kontakt“ z tabulky SONAVOX. Předchozí celní prohlášení Sonavox však deklaruje "
+     "„terminal – části reproduktorů“ pod 8518 90 00 DK 00. Zařazení bylo opraveno na 8518 90 00 00, což je "
+     "i věcně správnější (hotový díl určený výhradně pro reproduktor = část zboží čísla 8518 dle pozn. 2 "
+     "ke třídě XVI; 7409 je naopak polotovar – desky a pásy z mědi)."),
     ("NESROVNALOST", "FCR uvádí jen jednoho odesílatele, zásilka je však od tří prodávajících",
      "FCR TECGO26080029 uvádí jako shipper pouze SUZHOU SONAVOX ELECTRONICS CO., LTD. Zboží v kontejneru však "
      "pochází od TŘÍ různých prodávajících (Suzhou Sonavox International Trading, Suzhou Sonavox Electronics, "
@@ -350,6 +353,12 @@ notes = [
      "Packing list CZ20260725-2 (Yanlong) uvádí ETD 29.07.2026 / ETA 29.08.2026; FCR byl však vystaven "
      "04.08.2026 a vlak má č. V.WB2026/08/05 (05.08.2026). U zbylých dvou sad dokladů jsou ETD/ETA prázdné. "
      "Doporučeno sjednotit."),
+    ("VYŘEŠENO", "Potvrzeno předchozími celními prohlášeními Sonavox",
+     "Z dvou předchozích celních prohlášení na obdobné zásilky Sonavox byly potvrzeny tyto kódy: "
+     "Cone, Spider, Dust cap, T-yoke, Front plate, Bracket, Speaker component i Terminal = 8518 90 00 DK 00; "
+     "Car speaker = 8518 21 00 DK 00; Harness / kabelový svazek = 7413 00 00 DK 90; "
+     "Gasket (plastové těsnění) + Gauge (plastový kalibr) společně na jednom řádku = 3926 90 97 DK 90. "
+     "Potvrzen je rovněž postup slučování více komponent pod jeden kód na jeden řádek."),
     ("OK", "Kontrolní součty souhlasí",
      "Hrubá hmotnost 9 950,74 + 12 907,84 + 1 274,42 = 24 133,00 kg = FCR (24 133 KGS) i SMGS (24 133 kg). "
      "Kolí 12 + 23 + 16 = 51 palet = FCR (51 PLTS) i SMGS (51). Objem 15,24 + 16,64 + 19,52 = 51,40 CBM = FCR "
@@ -409,10 +418,15 @@ rows = [
     ("HBL_TECGO26080029.pdf", "Forwarder's Cargo Receipt T.H.I. Group Ltd. – trasa, kontejner, brutto, kolí, objem"),
     ("CIMU1716969.pdf", "Nákladní list SMGS č. 38055706 – železniční přeprava, plomba, hmotnosti, trasa"),
     ("Re_SONAVOX_HS_KODY.eml", "Referenční tabulka HS kódů s českými popisy (Ing. Michaela Ryan, Sonavox Technology CZ) – zdroj HS kódů a českých popisů"),
+    ("Předchozí celní prohlášení Sonavox (2 ks)", "Screenshoty položek dřívějších celních prohlášení na obdobné "
+     "zásilky – zdroj potvrzení kódů 8518 90 00 DK 00, 8518 21 00 DK 00, 7413 00 00 DK 90 a 3926 90 97 DK 90"),
     ("", ""),
-    ("POZOR", "Faktury ANI packing listy neobsahují žádné HS kódy. Všechny HS kódy v tomto souhrnu jsou "
-              "přiřazeny podle referenční tabulky z e-mailu „SONAVOX HS KODY“ na základě názvu dílu; "
-              "položky bez přímé shody jsou označeny na listu Poznámky & flagy jako „K OVĚŘENÍ“."),
+    ("POZOR", "Faktury ANI packing listy neobsahují žádné HS kódy. Kódy v tomto souhrnu pocházejí "
+              "z referenční tabulky „SONAVOX HS KODY“ a z předchozích celních prohlášení Sonavox. "
+              "Kde se oba zdroje liší, má přednost celní prohlášení (Front plate, Terminal). "
+              "Zbývající nepotvrzené položky jsou na listu Poznámky & flagy označeny jako „K OVĚŘENÍ“: "
+              "Nut / Spring nut (materiál) a Waterproof membrane. Voice coil je podložen závaznou "
+              "informací o sazebním zařazení ZISZ 30-0292-2016."),
 ]
 r = 3
 for a, b in rows:
