@@ -9,23 +9,15 @@ Ahoj Josefe,
 
 díky za doklady. Prošla jsem je a před vyclením do VO potřebuju doladit čtyři věci. Můžeš je prosím zjistit u Sonavoxu (Michaela Ryan), případně u odesílatele?
 
-**1. Matice 029-2513-AL-CZ (180 000 ks, faktura CZ20260725) — potřebuju vědět dvě věci: z čeho je a co to přesně je.**
+**1. Matice 029-2513-AL-CZ (180 000 ks, faktura CZ20260725) — potřebuju jméno výrobce a fotku dílu.**
 
-*Materiál:* v názvu dílu je „AL“, což vypadá na hliník, ale v tabulce HS kódů od Sonavoxu je vedená jako ocelová.
+Sonavox má tenhle díl pod kódem **7318 15 95**. Na ten kód je antidumpingové clo na spojovací materiál z Číny a celní systém si k němu vyžádá doplňkový kód podle konkrétního výrobce.
 
-*Druh dílu:* je to opravdu **matice**, nebo spíš **závitová vložka / šroub**? Sonavox jí dal kód 7318 15 95, což je ale kód pro šrouby a svorníky, ne pro matice.
+**Bez jména výrobce se použije zbytková sazba 86,5 %** — to je na těchhle dílech (13 140 EUR i se spring nuty) skoro **11 400 EUR cla navíc**. Se jménem výrobce může sazba spadnout na 22,1–48,8 %.
 
-Proč se na obojí ptám — vychází z toho tři různé výsledky:
-
-| Varianta | Kód | Clo | Antidumping |
-|---|---|---|---|
-| hliník | 7616 10 00 | cca 6 % | ne |
-| ocelová matice | 7318 16 | cca 3,7 % | ne |
-| ocelový šroub / vložka | 7318 15 95 | 3,7 % | **22,1 – 86,5 %** |
-
-Antidumpingové nařízení (EU) 2022/191 se totiž vztahuje jen na šrouby, svorníky a podložky — samostatné matice pod 7318 16 do něj nespadají.
-
-**Pokud vyjde poslední varianta, potřebuju navíc název a adresu čínského výrobce.** Bez jména se použije zbytková sazba 86,5 %, se jménem to může spadnout na 22,1–48,8 %. Na těch 12 600 EUR je to rozdíl zhruba 8 000 EUR na clu.
+Takže potřebuju:
+- **název a adresu čínského výrobce** těch matic,
+- **fotku nebo výkres dílu** — v názvu je „AL“, což vypadá na hliník, ale Sonavox ho vede jako ocelový. Pokud je hliníkový, patří jinam (7616 10 00) a žádný antidumping tam není.
 
 **2. Spring nut 029A-000004-CZ (30 000 ks) — jaký kód a jaký materiál?**
 Tenhle díl v tabulce vůbec není. Zatím jsem ho dala pod stejný kód jako matici, takže platí i stejné otázky jako v bodě 1.
