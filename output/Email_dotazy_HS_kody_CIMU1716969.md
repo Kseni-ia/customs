@@ -19,11 +19,13 @@ Takže potřebuju:
 - **název a adresu čínského výrobce** těch matic,
 - **fotku nebo výkres dílu** — v názvu je „AL“, což vypadá na hliník, ale Sonavox ho vede jako ocelový. Pokud je hliníkový, patří jinam (7616 10 00) a žádný antidumping tam není.
 
-**2. Spring nut 029A-000004-CZ (30 000 ks) — jaký kód a jaký materiál?**
-Tenhle díl v tabulce vůbec není. Zatím jsem ho dala pod stejný kód jako matici, takže platí i stejné otázky jako v bodě 1.
+**2. Spring nut 029A-000004-CZ (30 000 ks, 540 EUR) — potřebuju HS kód.**
 
-**3. Waterproof membrane J2-10X002-0001-CZ (210 000 ks) — jaký kód?**
-Taky není v tabulce. Zatím jsem použila 3921 90 90 jako u „plastové membrány“. Sedí to?
+Tenhle díl není ani v tabulce HS kódů, ani v žádném z předchozích celních prohlášení. Kód si nemůžeme určit sami, takže ho potřebuju od vás.
+
+**3. Waterproof membrane J2-10X002-0001-CZ (210 000 ks, 8 820 EUR) — potřebuju HS kód.**
+
+Totéž — v tabulce ani v předchozích prohlášeních není. V tabulce je sice řádek „Protective membrane plast“, ale to je jiný díl, takže z toho vycházet nemůžu.
 
 **4. Dodací podmínka — chybí místo u FOB.**
 Na všech třech fakturách je jen „FOB“ bez města, potřebuju doplnit konkrétní místo.
