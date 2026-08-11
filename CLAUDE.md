@@ -60,8 +60,33 @@ me it's missing — don't silently drop the whole column.
   `EXW Seoul`). Never leave out the city.
 - Apply the **proportional trade discount** to customs values when a discount applies to
   the shipment (distribute it across line items in proportion to value).
-- Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items.
+- Flag **CBAM** (Carbon Border Adjustment Mechanism) applicable items. See the
+  **CBAM lookup** section below for what to report.
 - Add an **antidumping note** for any items subject to antidumping duties.
+
+## CBAM lookup — by CZ receiver (VERY IMPORTANT)
+
+- The CBAM registry lives in **`reference/CBAM_receivers_CZ.xlsx`** (sheet `List1`).
+  This is the source of truth for CBAM status. Whenever a shipment contains a
+  **CBAM-applicable HS code**, look the receiver up in this file and report the result.
+- **Look up by the CZ receiver** (the importing company in the Czech Republic) — match on
+  the **`Firma`** column (or its **`EORI`**). CBAM status is tied to the receiver, not the
+  sender or the HS code.
+- **When the receiver is found, show me their CBAM status** from the row — specifically:
+  - the **`Y KÓD`** (`Y128`, `Y238`, `Y137`, `Y237`) — this is the declaration code to use,
+  - the **authorization number** (`povolení`, e.g. `CBAM-CZ-2025-…`) if present,
+  - the **application** reference (`podaná žádost`, e.g. `APPL-CZ-…`) if present,
+  - the **EORI** and issue date (`datum vydání`) when available.
+
+  Quick guide to the Y codes:
+  - **`Y128`** — authorization granted (`povolení`); full CBAM authorised declarant.
+  - **`Y238`** — application submitted (`podaná žádost`), not yet authorised.
+  - **`Y137`** — below the de-minimis threshold (`do 50 t ročně`, under 50 t/year).
+- **If the receiver company is NOT in the file, tell me explicitly** — don't guess or assume
+  a status. Flag it prominently so I can check the company and add it to the registry.
+- The file also lists **non-EU companies that use our shared CBAM account**
+  (`CBAM-CZ-2025-QGM67089385721`) in the right-hand columns. If a shipment involves one of
+  these, note that it goes under the shared account.
 
 ## Document checks — COO / preferential origin (VERY IMPORTANT)
 
