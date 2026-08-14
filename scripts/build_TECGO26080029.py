@@ -76,12 +76,13 @@ LINES = [
      "Kabelový svazek – splétaná lanka z mědi, elektricky neizolovaná",
      SRC_CP + ": „harness – kabelový svazek“, CN 7413 00 00 DK 90"),
     # --- Sender 1 — BEZ KÓDU ---
-    (S1, 9, "J2-10X002-0001-CZ", "Waterproof membrane", 210000, 30.24, 40.00, 8820.00, None,
-     "Vodotěsná membrána (dle faktury „Waterproof membrane“ – český popis není k dispozici)",
-     "NENÍ V PODKLADECH – v e-mailu SONAVOX ani v předchozích celních prohlášeních tato položka není"),
-    (S1, 15, "029A-000004-CZ", "Spring nut", 30000, 12.6, 15.00, 540.00, None,
-     "Pružná matice (dle faktury „Spring nut“ – český popis není k dispozici)",
-     "NENÍ V PODKLADECH – v e-mailu SONAVOX ani v předchozích celních prohlášeních tato položka není"),
+    (S1, 9, "J2-10X002-0001-CZ", "Waterproof membrane", 210000, 30.24, 40.00, 8820.00, "8518900000",
+     "Vodotěsná membrána – část autoreproduktoru",
+     "e-mail Alice Knápková (Sonavox Technology CZ), 12.08.2026" + ": „Waterproof membrane – 8518900000“"),
+    (S1, 15, "029A-000004-CZ", "Spring nut", 30000, 12.6, 15.00, 540.00, "731816",
+     "Pružná matice (spring nut) – matice ze železa nebo oceli",
+     "e-mail Alice Knápková (Sonavox Technology CZ), 12.08.2026" + ": „029A-000004-CZ – HS 731816“ (POZOR: jen 6 míst, "
+     "nutno doplnit na 10 – 7318 16 má šest podpoložek)"),
 
     # --- Sender 2 — CZ20260725-1 ---
     (S2, 1, "212-8075-CZ", "Ceramics circle", 19152, 11299.68, 11688.80, 19918.08, "8518900000",
@@ -105,12 +106,16 @@ LINES = [
 
 HS_META = {
     "8504500000": ("Ne", "Ne", "Zařazení podloženo závaznou informací ZISZ 30-0292-2016."),
-    "8518900000": ("Ne", "Ne", "Části a součásti reproduktorů, DK 00 dle předchozích celních prohlášení."),
+    "8518900000": ("Ne", "Ne", "Části a součásti reproduktorů, DK 00 dle předchozích celních prohlášení. "
+                               "Zahrnuje i Waterproof membrane dle sdělení klienta z 12.08.2026."),
     "8518210000": ("Ne", "Ne", "Kompletní autoreproduktor, jediný v jedné skříni."),
     "3926909790": ("Ne", "Ne", "Ostatní výrobky z plastů, DK 90 dle předchozího celního prohlášení."),
     "7413000090": ("Ne", "Ne", "Splétaná lanka z mědi, neizolovaná, DK 90 dle předchozího celního prohlášení."),
-    "7318159519": ("ANO", "K OVĚŘENÍ", "CBAM platí i pro hliníkovou variantu (7616). Antidumping závisí na "
-                                       "materiálu a druhu dílu – viz list Poznámky."),
+    "731816": ("ANO – Y137", "Ne", "Matice ze železa/oceli. Kód 7318 16 NENÍ v seznamu nař. (EU) 2022/191, "
+                                    "antidumping se tedy neuplatní. POZOR: kód je jen 6místný, nutno doplnit na 10."),
+    "7318159519": ("ANO – Y137", "ANO – 90,2 %", "Antidumping potvrzen výpočtem v Helios: 3,7 % clo + 86,5 % AD = 90,2 %, "
+                                  "základ 304 416 Kč → 274 584 Kč. CBAM pokryt prohlášením Y137. "
+                                  "ROZPOR: spring nut má dle klienta 7318 16 (matice, bez AD) – viz Poznámky."),
     None: ("K OVĚŘENÍ", "K OVĚŘENÍ", "Bez HS kódu nelze určit. Vyžádat od klienta – viz list „Chybějící HS kódy“."),
 }
 
@@ -194,7 +199,10 @@ meta = [
     ("INCOTERM:", INCOTERM),
     ("Preferenční věta:", "NENALEZENA v žádném dokladu – viz list Poznámky"),
     ("Celkem kolí / objem:", "51 palet / 51,40 CBM / brutto 24 133 kg (souhlasí s FCR i SMGS)"),
-    ("CHYBĚJÍCÍ HS KÓDY:", "2 položky bez kódu v podkladech (9 360,00 EUR) – viz list „Chybějící HS kódy“"),
+    ("Doplněné HS kódy:", "2 položky doplnil klient 12.08.2026 – viz list „Doplněné HS kódy“ "
+                          "(u Spring nut jen 6 míst, nutno doplnit)"),
+    ("CBAM:", "Prohlášení de minimis Y137 (do 50 t/rok) ze dne 12.08.2026, podepsala Ing. Michaela Ryan"),
+    ("ANTIDUMPING:", "NEVYŘEŠEN – prohlášení Y137 se týká CBAM, nikoli antidumpingu. Viz Poznámky."),
 ]
 r = 3
 for k, v in meta:
@@ -324,20 +332,28 @@ for col, w in zip("ABCDEFGHIJKL", [38, 14, 24, 52, 13, 15, 15, 16, 32, 11, 13, 6
 ws.freeze_panes = f"A{hdr + 1}"
 
 # --------------------------------------------------------- Chybějící HS kódy
-mi = wb.create_sheet("Chybějící HS kódy", 1)
-mi["A1"] = "POLOŽKY BEZ HS KÓDU – NUTNO VYŽÁDAT OD KLIENTA"
+mi = wb.create_sheet("Doplněné HS kódy", 1)
+mi["A1"] = "HS KÓDY DODATEČNĚ DOPLNĚNÉ KLIENTEM"
 mi["A1"].font = TITLE
-mi["A2"] = ("Tyto položky nemají HS kód v žádném podkladu – ani v e-mailu „SONAVOX HS KODY“, "
-            "ani v předchozích celních prohlášeních Sonavox. Kód nelze doplnit vlastním odvozením; "
-            "musí ho poskytnout klient.")
-mi["A2"].font = RED
+mi["A2"] = ("Tyto dvě položky neměly HS kód v žádném původním podkladu. Kódy dodala Alice Knápková "
+            "(Sonavox Technology CZ) e-mailem dne 12.08.2026 – viz sloupec Zdroj.")
+mi["A2"].font = BASE
 mi["A2"].alignment = Alignment(wrap_text=True, vertical="top")
-mi.merge_cells("A2:I2")
+mi.merge_cells("A2:J2")
 mi.row_dimensions[2].height = 30
+
+RESOLVED = [
+    (S1, 9, "J2-10X002-0001-CZ", "Waterproof membrane", 210000, 30.24, 40.00, 8820.00,
+     "8518900000", "OK – úplný 10místný kód",
+     "e-mail Alice Knápková, 12.08.2026: „Waterproof membrane  8518900000“"),
+    (S1, 15, "029A-000004-CZ", "Spring nut", 30000, 12.6, 15.00, 540.00,
+     "731816", "NEÚPLNÝ – jen 6 míst, nutno doplnit na 10",
+     "e-mail Alice Knápková, 12.08.2026: „029A-000004-CZ  HS 731816“"),
+]
 
 mcols = ["Odesílatel", "Faktura", "Pol. č.", "Part Number", "Popis dle faktury (EN)",
          "Množství (ks)", "Čistá hm. (kg)", "Hrubá hm. (kg)", "Celní hodnota (EUR)",
-         "HS kód – DOPLNÍ KLIENT"]
+         "HS kód od klienta", "Stav kódu", "Zdroj"]
 r = 4
 for i, c in enumerate(mcols, start=1):
     cell = mi.cell(row=r, column=i, value=c)
@@ -346,24 +362,22 @@ for i, c in enumerate(mcols, start=1):
     cell.border = BORDER
 mi.row_dimensions[r].height = 32
 r += 1
-missing = [ln for ln in LINES if ln[8] is None]
-for sender, item, part, en, qty, net, gross, val, hs, cz, src in missing:
-    mi.append([sender, INV[sender], item, part, en, qty, net, gross, val, ""])
-    for c in range(1, 11):
+for sender, item, part, en, qty, net, gross, val, hs, stav, zdroj in RESOLVED:
+    mi.append([sender, INV[sender], item, part, en, qty, net, gross, val, hs, stav, zdroj])
+    for c in range(1, 13):
         cell = mi.cell(row=r, column=c)
         cell.font, cell.border = BASE, BORDER
         cell.alignment = Alignment(wrap_text=True, vertical="top")
     mi.cell(row=r, column=6).number_format = "#,##0"
     for c in (7, 8, 9):
         mi.cell(row=r, column=c).number_format = "#,##0.00"
-    mi.cell(row=r, column=10).fill = PatternFill("solid", fgColor="FFFF00")
+    mi.cell(row=r, column=10).number_format = "@"
+    if stav.startswith("NEÚPLNÝ"):
+        for c in range(1, 13):
+            mi.cell(row=r, column=c).fill = FILL_RED
+        mi.cell(row=r, column=11).font = RED
     r += 1
-mi.cell(row=r, column=5, value="CELKEM").font = BOLD
-for c, L in ((6, "F"), (7, "G"), (8, "H"), (9, "I")):
-    cell = mi.cell(row=r, column=c, value=f"=SUM({L}5:{L}{r - 1})")
-    cell.font, cell.fill = BOLD, FILL_TOT
-    cell.number_format = "#,##0" if c == 6 else "#,##0.00"
-for col, w in zip("ABCDEFGHIJ", [38, 14, 8, 22, 26, 13, 14, 14, 16, 24]):
+for col, w in zip("ABCDEFGHIJKL", [34, 13, 8, 22, 24, 12, 13, 13, 15, 16, 34, 52]):
     mi.column_dimensions[col].width = w
 
 # ------------------------------------------------------------------ Poznámky
@@ -371,11 +385,26 @@ nt = wb.create_sheet("Poznámky & flagy")
 nt["A1"] = "POZNÁMKY, UPOZORNĚNÍ A NESROVNALOSTI"
 nt["A1"].font = TITLE
 notes = [
-    ("KRITICKÉ", "Dvě položky bez HS kódu – nelze proclít",
-     "Waterproof membrane J2-10X002-0001-CZ (210 000 ks, 8 820,00 EUR) a Spring nut 029A-000004-CZ "
-     "(30 000 ks, 540,00 EUR), obě z faktury CZ20260725. Ani jedna není v e-mailu „SONAVOX HS KODY“ "
-     "ani v předchozích celních prohlášeních. Kódy NEBYLY doplněny vlastním odvozením – musí je "
-     "poskytnout klient. Detail na listu „Chybějící HS kódy“."),
+    ("KRITICKÉ", "Prohlášení Y137 řeší CBAM, NIKOLI antidumping",
+     "Na dotaz k antidumpingu u položky 7318 15 95 19 zaslal klient dne 12.08.2026 prohlášení podepsané "
+     "Ing. Michaelou Ryan: „Sonavox Technology CZ s.r.o. uplatňuje výjimku de minimis – za kalendářní rok "
+     "naše dovozy nepřesáhnou kumulativně 50 tun čisté hmotnosti (kód Y137)“. Kód Y137 je však kód CBAM "
+     "(uhlíkové vyrovnávací opatření), NE antidumping. Antidumpingové clo dle nař. (EU) 2022/191 žádnou "
+     "obdobnou výjimku de minimis nemá. Clo 274 584 Kč tedy tímto prohlášením NEODPADÁ. "
+     "NUTNO KLIENTOVI VYSVĚTLIT A ZNOVU VYŽÁDAT NÁZEV A ADRESU ČÍNSKÉHO VÝROBCE."),
+    ("KRITICKÉ", "Rozpor 7318 16 vs. 7318 15 95 – možná úspora 274 584 Kč",
+     "Klient dne 12.08.2026 zařadil Spring nut (029A-000004-CZ) pod HS 7318 16, tedy pod MATICE. "
+     "Položka 14 „Nut“ (029-2513-AL-CZ) je přitom dle tabulky SONAVOX pod 7318 15 95 19, tedy pod "
+     "ŠROUBY A SVORNÍKY. Pokud je i díl 029-2513-AL-CZ maticí, patří rovněž pod 7318 16 – a ten v seznamu "
+     "nař. (EU) 2022/191 NENÍ, takže by antidumping zcela odpadl. Rozdíl činí 274 584 Kč. "
+     "NUTNO S KLIENTEM VYJASNIT, PROČ JSOU DVA PODOBNÉ DÍLY V RŮZNÝCH POLOŽKÁCH."),
+    ("K OVĚŘENÍ", "Spring nut – kód je jen 6místný",
+     "Klient uvedl „HS 731816“, tedy pouze 6 míst. Do celního prohlášení je nutný 10místný kód; "
+     "podpoložka 7318 16 se dále dělí podle typu matice a vnitřního průměru. Nutno vyžádat doplnění."),
+    ("VYŘEŠENO", "Waterproof membrane – kód doplněn klientem",
+     "Klient dne 12.08.2026 zařadil J2-10X002-0001-CZ (210 000 ks, 8 820,00 EUR) pod 8518 90 00 00, "
+     "tedy jako část reproduktoru. Kód je úplný a odpovídá DK 00 používanému u ostatních částí. "
+     "Položka je proto sloučena do řádku 8518 90 00 00."),
     ("KRITICKÉ", "Preferenční věta / preferenční původ (COO)",
      "V žádném z dodaných dokladů (3× faktura, 3× packing list, FCR TECGO26080029, nákladní list SMGS 38055706) "
      "NENÍ uvedena preferenční věta o původu zboží. Původ zboží = ČÍNA. EU nemá s Čínou dohodu o preferenčním "
@@ -386,19 +415,30 @@ notes = [
      "jde ŽELEZNICÍ (Zhengzhou/Putian → Malaszewicze → CZ); správný termín je FCA s uvedeným místem. "
      "FCR je „freight collect“, takže bez určení dodacího místa nelze spolehlivě určit, zda se do celní "
      "hodnoty připočítává dopravné do hranice EU."),
-    ("KRITICKÉ", "Antidumping u matic – závisí na materiálu i na druhu dílu",
-     "Položka 14 (Nut, 029-2513-AL-CZ, 180 000 ks, 12 600,00 EUR) má dle e-mailu SONAVOX kód 7318 15 95 19. "
+    ("KRITICKÉ", "Antidumping u matic – vyčísleno 274 584 Kč",
+     "Položka 14 (Nut, 029-2513-AL-CZ, 180 000 ks, 12 600,00 EUR) pod kódem 7318 15 95 19. Výpočet v Helios: "
+     "druh A00, základ 304 416 Kč, sazba 90,2 % (= 3,7 % clo + 86,5 % antidumping), částka 274 584 Kč. "
+     "Sazba 86,5 % je ZBYTKOVÁ pro neznámého/nespolupracujícího výrobce; s názvem a adresou čínského výrobce "
+     "lze získat doplňkový kód TARIC se sazbou 22,1–48,8 % (clo celkem 25,8–52,5 %, tj. 78 539–159 818 Kč) "
+     "nebo 39,6 % pro spolupracující výrobce (131 812 Kč). Možná úspora až cca 196 000 Kč. "
      "Tři možné scénáře: (a) HLINÍK → 7616 10 00, clo cca 6 %, BEZ antidumpingu; (b) OCELOVÁ MATICE → 7318 16, "
      "clo cca 3,7 %, BEZ antidumpingu; (c) OCELOVÝ ŠROUB / VLOŽKA → ex 7318 15 95, clo 3,7 % + ANTIDUMPING "
      "22,1–86,5 %. Nař. (EU) 2022/191 se vztahuje na vruty, samořezné šrouby, ostatní šrouby a svorníky s hlavou "
      "a podložky (7318 12 90, 7318 14 91, 7318 14 99, 7318 15 58, 7318 15 68, 7318 15 82, 7318 15 88, "
      "ex 7318 15 95, ex 7318 21 00, ex 7318 22 00) – kód 7318 16 pro MATICE v seznamu NENÍ. "
      "Bez jména čínského výrobce se uplatní zbytková sazba 86,5 %. NUTNO ZJISTIT MATERIÁL, DRUH DÍLU A VÝROBCE."),
-    ("KRITICKÉ", "CBAM – platí u matic v každé variantě",
-     "Položka 14 (180 000 ks, čistá hmotnost 299,70 kg) spadá do přílohy I nařízení CBAM bez ohledu na výsledek "
-     "otázky materiálu – kapitola 73 (železo a ocel) i kapitola 76 (hliník) jsou v příloze I. Nutno zahrnout "
-     "do čtvrtletního CBAM hlášení. Pokud bude Spring nut zařazen do stejné kapitoly, platí totéž i pro něj. "
+    ("VYŘEŠENO", "CBAM – prohlášení de minimis Y137 doloženo",
+     "Položky 14 a 15 (7318 15 95 19 a 7318 16, celkem 312,30 kg čisté hmotnosti) spadají do přílohy I "
+     "nařízení CBAM. Klient doložil dne 12.08.2026 podepsané prohlášení, že dovozy Sonavox Technology CZ s.r.o. "
+     "nepřesáhnou za kalendářní rok kumulativně 50 tun čisté hmotnosti – kód Y137 (do 50 t ročně). "
+     "V celním prohlášení se tedy u těchto položek uvede Y137. "
+     "POZOR: platnost je vázána na kumulativní roční objem – při dalších dovozech je nutno sledovat součet. "
      "Ostatní položky zásilky (kap. 39, 85) do CBAM nespadají."),
+    ("K OVĚŘENÍ", "CBAM registr příjemců nebyl k dispozici",
+     "Referenční soubor reference/CBAM_receivers_CZ.xlsx (list List1) není v repozitáři k dispozici, "
+     "nebylo proto možné ověřit zápis příjemce Sonavox Technology CZ s.r.o. (IČO 19670338, DIČ CZ19670338) "
+     "v registru ani porovnat deklarovaný kód Y137 se záznamem. Doporučeno ověřit a případně příjemce "
+     "do registru doplnit."),
     ("ROZPOR", "Front plate – e-mail a celní prohlášení se liší",
      "E-mail SONAVOX uvádí u „FRONT PLATE / ocelová deska“ kód 8518900090. Předchozí celní prohlášení Sonavox "
      "však deklaruje „Front plate – deska“ pod CN 8518 90 00 s DK 00. V souhrnu je použita varianta "
