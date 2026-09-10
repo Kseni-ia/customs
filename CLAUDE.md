@@ -103,6 +103,16 @@ me it's missing — don't silently drop the whole column.
 - **If a `preferenční věta` is present in the docs, flag it to me explicitly** as a prominent
   note — it is critical for correct clearance of the shipment. Don't bury it; call it out.
 
+### REX number on the invoice (VERY IMPORTANT)
+
+- **Always check the invoice for a REX number** (Registered Exporter system — the
+  registered-exporter authorization the exporter cites to make out a statement on origin,
+  e.g. `REXCZ...`, or embedded in the customs-authorization number of the `preferenční věta`).
+- **Tell me whether a REX number is present or not** — explicitly, either way:
+  - **If REX is on the invoice, flag it and report the number** as a prominent note.
+  - **If there is no REX number, say so explicitly** — don't leave it unstated. Its absence
+    matters, because the preferential-origin claim may not be valid without it.
+
 ## Defaults & assumptions
 
 <!-- Fill these in so I stop asking each time. Delete any that don't apply. -->
