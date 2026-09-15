@@ -53,6 +53,36 @@ me it's missing — don't silently drop the whole column.
   sender.** Do NOT merge identical HS codes across senders; the shipment must be classified
   per sender in that case.
 
+### When an item has NO HS code — the "CCT/VPV KN tariff rule" (VERY IMPORTANT)
+
+- Sometimes the source data gives an item with **no HS code**. In that case, **derive the HS
+  code yourself** using the EU Common Customs Tariff classification method. I keep the
+  reference deck at **`reference/Common_Customs_Tariff_EU_CZ.pptx`** (Společný celní sazebník
+  EU — structure of the tariff + the General Interpretation Rules).
+- **This procedure is named the `CCT/VPV KN tariff rule`.** Whenever you use it, **tell me
+  explicitly and prominently**, e.g.:
+  > ⚠️ **No HS code was provided for `<item>` — I classified it using the `CCT/VPV KN tariff
+  > rule`.** Result: `<HS/CN code>`.
+
+  Name every item you had to classify this way, so I know which codes came from the source
+  docs and which ones you derived.
+- **How to classify (answer all three questions first):**
+  1. **CO TO JE?** — *what is it?* (the goods' nature/description: machine, toy, textile,
+     supplement, …)
+  2. **Z ČEHO TO JE?** — *what is it made of?* (material / components: plastic, steel,
+     aluminium, populated PCB, …)
+  3. **K ČEMU SLOUŽÍ?** — *what is it used for?* (function / intended purpose / principle).
+- **Then walk the nomenclature:** find the **class (třída)** and **chapter (kapitola)** →
+  read the chapter's opening notes to check the goods aren't **excluded** → find the **HS
+  heading** (4 digits) and **HS subheading** (6 digits) → determine the **CN subheading (KN)**
+  (8 digits), and the **TARIC** (10 digits) where relevant.
+- **Apply the General Interpretation Rules (VPV KN 1–6)** and respect the HS/CN Explanatory
+  Notes: classify by the wording of headings and the section/chapter notes (VPV 1); most
+  specific heading wins, then essential character, then last in numerical order (VPV 3a/3b/3c).
+- **If you're unsure or the classification is ambiguous, tell me** rather than guessing — the
+  deck notes the tariff team (`customs.tariff@mauriceward.com`) as the escalation path; flag
+  it to me so I can decide whether to consult them.
+
 ### Other rules
 
 - **Always include the Incoterm** in the summary — both the **Incoterm term** (e.g. FCA,
