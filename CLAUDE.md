@@ -12,12 +12,43 @@ I prepare customs documentation for shipments — primarily **HS code summaries*
 as Excel files. Each shipment has a client and a shipment number
 (e.g. "Czech Healthcare, shipment 196652").
 
-## Output files
+## Output files — one folder per shipment (IMPORTANT)
 
-- Save all deliverables to the `output/` folder.
+**Every shipment gets its own folder** under `shipments/`, so no two shipments ever
+get mixed together:
+
+```
+shipments/<YYYY-MM-DD>_<Client>_<ShipmentNumber>/
+    HS_Code_Summary_<Client>_<ShipmentNumber>.xlsx    <- the deliverable
+    README.md                                         <- shipment card (see below)
+```
+
+- **Create the folder at the start of a shipment** with:
+  `scripts/new_shipment.sh "<Client>" <ShipmentNumber>`
+- **Save every deliverable for that shipment into that folder** — the Excel summary and
+  anything else produced for it (drafted emails, helper scripts, notes).
 - Name Excel files: `HS_Code_Summary_<Client>_<ShipmentNumber>.xlsx`
-  - Example: `output/HS_Code_Summary_Czech_Healthcare_196652.xlsx`
+  - Example: `shipments/2026-09-15_Czech_Healthcare_196652/HS_Code_Summary_Czech_Healthcare_196652.xlsx`
 - Use underscores instead of spaces in file names.
+- `output/` is the old flat location. Everything from it has been moved into `shipments/`.
+  Don't write new deliverables there.
+
+### Keep the shipment card up to date
+
+Each folder's `README.md` is the shipment card. Before finishing a session, fill in:
+
+- the **chat link** for the session that worked on it (so the conversation can be reopened),
+- **where it was left** (one line),
+- **what is still open** (missing invoice, unconfirmed HS code, awaiting reply — whatever
+  the next person needs to know).
+
+### ALWAYS commit and push the deliverable
+
+- **Commit and push the shipment folder before the session ends.** Web sessions run in a
+  container that is thrown away afterwards — anything not pushed is lost. The push is what
+  makes the shipment archived and reopenable.
+- After pushing, **add the shipment to `shipments/INDEX.md`** (newest first) so it shows up
+  in the archive list.
 
 ## HS code summary — default rules
 
