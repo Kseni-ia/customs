@@ -3,33 +3,36 @@ Předmět: Zásilka 28511 (Lugaia AG → Brenntag Specialties Czech) – HS summ
 Dobrý den,
 
 v příloze posílám HS summary k zásilce 28511 (faktura a dodací list z 10.09.2026).
-
-Jeden odesílatel, 7 pozic faktury sloučeno na 3 HS kódy:
-- 3920 10 25 90 – fólie LDPE 80 µm (linerunity CLS-500/600), 20 ks
-- 3923 50 90 00 – uzávěry z plastů (SafeSeal plomby, krytky, oka), 502 ks
-- 8203 20 00 00 – kleště (otvírák SafeSeal), 1 ks
-Incoterm EXW Raron. Celní hodnota 7 497,00 CHF (vč. obalu 85,00 CHF).
+Sedm pozic faktury je sloučeno na tři HS kódy, Incoterm EXW Raron, celní hodnota
+7 497,00 CHF (vč. obalu 85,00 CHF).
 
 Před podáním JSD je potřeba vyřešit:
 
-1) Preferenční původ – riziko cca 480 CHF cla.
-Preferenční věta na dokladech je, ale chybí v ní číslo povolení schváleného
+1) Preferenční původ – potřebujeme EUR.1. Riziko cca 480 CHF cla.
+Preferenční věta na dokladech je, ale není v ní číslo povolení schváleného
 vývozce. Hodnota zásilky (~8 000 EUR) překračuje limit 6 000 EUR, do kterého
-smí prohlášení učinit kterýkoli vývozce – bez čísla povolení je nárok
-napadnutelný. REX číslo na faktuře také není (pro CH se ostatně nepoužívá).
-Potřebujeme od Lugaia buď opravenou fakturu s číslem povolení, nebo EUR.1.
+smí prohlášení na faktuře učinit kterýkoli vývozce – nad limitem je platné jen
+od schváleného vývozce s uvedeným číslem povolení.
+Ověřila jsem Lugaia AG v oficiálním seznamu švýcarských schválených vývozců
+(BAZG, seznam k 15.09.2026): LUGAIA AG V SEZNAMU NENÍ. Nemají tedy žádné číslo
+povolení a žádat je o jeho doplnění do věty nemá smysl.
+→ Jediná cesta k preferenci je průvodní osvědčení EUR.1 ověřené švýcarským
+celním úřadem. Bez něj proclíváme clem 3. zemí.
+(Pozn. REX se u Švýcarska nepoužívá, takže jeho absence sama o sobě vada není.)
 
 2) Chybí hmotnosti.
-V dokladech je jen hrubá hmotnost 99 kg za celou zásilku. Čistá hmotnost
-není nikde a pro JSD je povinná – prosím o packing list s rozpisem po
-položkách.
+V dokladech je jen hrubá hmotnost 99 kg za celou zásilku. Čistá hmotnost není
+nikde a pro JSD je povinná – prosím o packing list s rozpisem po položkách.
 
-3) Faktura je označena DRAFT – potřebujeme finální verzi.
+3) Pozice 7 „packaging" nemá HS kód.
+K této položce (1 × 1/2 paleta, 85,00 CHF) není v dokladech žádné tarifní číslo
+a není uveden ani materiál obalu. Zařazení zatím není určeno, je potřeba ho
+ověřit. Potřebujeme od Lugaia vědět, z čeho je obal/paleta a zda je paleta
+fakturována jako zboží, nebo jen jako náklad na balení.
 
-Dále dvě drobnosti: pozice 7 „packaging" nemá tarifní číslo, zařadil jsem ji
-dle VPV 5(b) do celní hodnoty zboží (nevzniká samostatná položka); a v pos. 7
-si doklady odporují v Incotermu (dodací list DAP Fulnek vs. faktura EXW) –
-prosím o potvrzení, co platí.
+Dále dvě drobnosti: faktura je označena DRAFT, potřebujeme finální verzi; a
+v pozici 7 si doklady odporují v Incotermu (dodací list DAP Fulnek vs. faktura
+EXW) – prosím o potvrzení, co platí.
 
 CBAM se zásilky netýká, antidumping u žádného z kódů nehrozí.
 
