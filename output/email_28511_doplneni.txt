@@ -1,0 +1,35 @@
+Předmět: RE: DOVOZ BRENNTAG // Zásilka 28511 – oprava bodu 1 (preferenční původ)
+
+Ahoj,
+
+musím opravit bod 1 z předchozího mailu – u limitu pro preferenční větu jsem
+vycházela z přepočtu na eura, což je špatně.
+
+Limit se posuzuje podle MĚNY, VE KTERÉ JE VYSTAVENA FAKTURA, nikoli přepočtem
+aktuálním kurzem. Každá země má pevně stanovený ekvivalent 6 000 EUR ve své
+měně a ten se kurzem přepočítávat nesmí. Pro Švýcarsko je to CHF 10 300.
+Faktura je v CHF, takže platí limit 10 300 CHF – a zásilka má 7 497,00 CHF,
+tedy 2 803 CHF POD limitem.
+
+Z toho plyne:
+- Lugaia AG nemusí být schválený vývozce a číslo povolení ve větě být nemusí.
+- EUR.1 NEPOTŘEBUJEME.
+- Preferenční sazba 0 % je uplatnitelná, riziko doměření cca 480 CHF neplatí.
+(Právně: čl. 18 odst. 1 písm. b) a čl. 30 odst. 2 pravidel původu – zásilka se
+posuzuje „by reference to the currency in which the invoice is drawn up“.)
+
+Jedna věc ale z bodu 1 zůstává:
+Preferenční větu musí vývozce VLASTNORUČNĚ PODEPSAT – podpisu je zproštěn jen
+schválený vývozce a Lugaia jím není (ověřeno v seznamu BAZG k 15.09.2026).
+Předaná faktura podepsaná NENÍ. Takže až budeme žádat o finální nedraftovou
+fakturu, potřebujeme ji rovnou i s podpisem u preferenční věty. Bez podpisu
+může celní úřad prohlášení odmítnout a preference by odpadla.
+
+Při té příležitosti by bylo dobré nechat narovnat i znění věty – na faktuře je
+„these products are of swiss-preferential origine“, předepsané znění je
+„...these products are of Switzerland preferential origin.“ Není to důvod
+k odmítnutí, ale ať to je čisté.
+
+Body 2 a 3 (chybějící hmotnosti a HS kód u pozice 7) platí beze změny.
+
+Díky a omlouvám se za zmatek.
