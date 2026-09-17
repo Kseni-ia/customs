@@ -36,11 +36,18 @@ drop any of them, even if the source data makes them tedious to compute:
 If any of these values is genuinely missing from the source data, keep the column and tell
 me it's missing — don't silently drop the whole column.
 
-### Description language — Czech is prioritised
+### Description — use the CLIENT'S Czech description (STRONG RULE)
 
-- **If a Czech description of the item is available in the source docs, use it.** The Czech
-  description takes priority over any other language for the Description column.
-- Only fall back to another language when no Czech description exists.
+- **Use the description the client sent, in Czech.** When the client provides a description
+  for an item, that **client-supplied Czech description is what goes in the Description
+  column** — verbatim. Do **not** paraphrase it, translate it, "improve" it, or replace it
+  with your own wording or a generic HS-heading description.
+- The **client's Czech description takes priority over everything else** — over other-language
+  descriptions in the docs, over the HS-code heading text, and over any description you might
+  otherwise generate.
+- **Only fall back** when the client did **not** send a Czech description: use another Czech
+  description from the source docs if one exists, and only if there is no Czech at all, fall
+  back to another language — and tell me that no Czech description was available.
 
 ### Classification — sender first, then HS code
 
