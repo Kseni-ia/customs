@@ -31,10 +31,24 @@ drop any of them, even if the source data makes them tedious to compute:
 3. **Net weight** per HS code (sum the net weights of the merged line items).
 4. **Gross weight** per HS code (sum the gross weights of the merged line items).
 5. **Quantity** — the total quantity for the HS code (sum the quantities of the merged line items).
-6. **Price / customs value** for the HS code.
+6. **Price / customs value** for the HS code — see the **Total amount** rule below.
 
 If any of these values is genuinely missing from the source data, keep the column and tell
 me it's missing — don't silently drop the whole column.
+
+### Total amount — take the "Total" price (STRONG RULE)
+
+- For the price / customs value, **use the amount labelled `Total`** on the source document.
+  I want **one total amount** per shipment / line — **not** an amount "before discount" and
+  **not** an amount "after discount". Just the figure written next to **`Total`**.
+- If the document shows several figures (subtotal, discount, before/after discount, …),
+  **take the one that says `Total`** and ignore the rest for this purpose.
+- This governs how the discount is handled: because I take the `Total` figure directly, do
+  **not** separately add back or re-derive a before/after-discount amount. (The proportional
+  trade-discount rule below is only for distributing a discount across line items *when I ask
+  for it* — the default price shown is the `Total`.)
+- If there is **no** field labelled `Total` on the document, tell me — don't guess which
+  figure is the total.
 
 ### Description — use the CLIENT'S Czech description (STRONG RULE)
 
