@@ -166,6 +166,8 @@ me it's missing — don't silently drop the whole column.
 
 ## "Melt and pour" — country of melt and pour for steel/iron (VERY IMPORTANT)
 
+- **⚠️ Treat this rule as ACTIVE NOW** — apply it to every steel/iron shipment from now on,
+  regardless of the phase-in dates noted below. Always run the melt-and-pour check.
 - For **steel and iron imports**, there is a **"melt and pour" rule** (`země tavby a odlití` /
   `země melt and pour`). On import, the importer must **document, in a verifiable way, the
   country where the raw steel or iron was first produced in liquid state** (in a steel/iron
@@ -177,10 +179,11 @@ me it's missing — don't silently drop the whole column.
     which document evidences it.
   - **If they're missing, flag it explicitly** — the melt-and-pour country must be documented
     on import, so I need to chase the `hutní atest` before clearance.
-- **Why it matters / key dates:**
+- **Why it matters (phase-in dates — but the check runs NOW regardless):**
   - **`Čl. 4 odst. 1`** — the obligation to document the melt-and-pour country on import.
   - The exact **list of required documents** is set by a Commission implementing act (first
-    act expected by **31 Aug 2026**), with allowances for small/medium enterprises.
+    act expected by **31 Aug 2026**), with allowances for small/medium enterprises. Until the
+    list is finalised, still ask for the melt-and-pour country + `hutní atest` now.
   - **From 1 Oct 2027** (`čl. 5 odst. 1 písm. j`), melt-and-pour data will also be used when
     **distributing quotas between countries** — so the melt-and-pour origin is not the same as
     the customs country of origin; keep them distinct.
