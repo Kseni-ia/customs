@@ -210,5 +210,6 @@ me it's missing — don't silently drop the whole column.
 
 - **LN SHOP NAILS S.R.O. (CZ14170191) — pedicure spa chairs** (sender HESHAN LIYAXUAN HEALTHY
   PRODUCT CO., LTD): classify as **9019 10 10 00** (declared as "Elektrické vibrační masážní přístroje –
-  elektrické pedikér…" — full text in the earlier declaration), confirmed from previous shipments. No need to escalate the
-  9019 vs 9402 question for these again.
+  elektrické pedikér…" — full text in the earlier declaration), used on previous shipments. No need to escalate the
+  9019 vs 9402 question for these again. Note: the shipment docs do not themselves state the chair is
+  electric / vibratory — if a spec sheet ever shows it is not, the code would be 9019 10 90.
